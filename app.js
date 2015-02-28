@@ -12,7 +12,6 @@ var serverconfig = JSON.parse(require('./serverConfig.js')());
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var content = require('./routes/content')
 
 var app = express();
 var db = new Store("data",{type:'single'});
@@ -31,7 +30,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/content.gif', content);
 //app.use('/5cf53e3e8057acdda822d596dcbc7e7c.txt', users);
 
 // catch 404 and forward to error handler
