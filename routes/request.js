@@ -16,6 +16,7 @@ router.post('/', function(req, res) {
   exec(command, function (error, stdout, stderr) {
     if(error) console.log(error);
     if(stderr) console.log(stderr);
+    if(stdout) console.log(stdout);
     res.contentType('application/json');
     res.send(JSON.stringify(stdout));
   });
