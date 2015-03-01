@@ -5,12 +5,12 @@ var router = express.Router();
 router.post('/', function(req, res) {
   //console.log(req.body);
   var jsonObj = req.body;
-  console.log(jsonObj['tags[]'][0]);
+  //console.log(jsonObj['tags[]'][0]);
   //jsonBuilder.push({cityFrom: req.body.cityFrom, cityTo: req.body.cityTo, startDate: req.body.startDate, endDate: req.body.endDate});
 
   var exec = require('child_process').exec;
   var command = 'java -cp DFW.jar Main "' + jsonObj['tags[]'][0] + '"';
-  //console.log(command);
+  console.log(command);
   exec(command, function (error, stdout, stderr) {
     if(error) console.log(error);
     if(stderr) console.log(stderr);
