@@ -6,12 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Official Site of the Sparkmail Hack">
+    <meta name="description" content="Official Site of the gopackme">
     <meta name="author" content="Timothy Su">
     <link rel="shortcut icon" type="image/ico" href="img/newicon.ico"/>
     <link rel="shortcut icon" type="image/ico" href="img/newicon.ico">
 
-    <title>Placeholder Name</title>
+    <title>gopackme</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,59 +44,91 @@
                 <div class="col-lg-12">
                     <img class="img-responsive" src="img/logo.png" alt="" width ="35%" height ="35%">
                     <div class="intro-text">
-                        <span class="name">Placeholder Name</span>
+                      <i>See what YOU should bring</i>
                         <hr class="star-light">
-                        <span class="skills">Placeholder description</span>
+                        <span class="skills">#crowdsourcedpacking</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
+    <div class="container" ng-app="todoApp">
+        <div class="row">
+            <div class="col-lg-4">
+              <br />
+                <div class="intro-text">
+                  <p style="color:white">Tell us about your trip!</p>
+                  <div ng-controller="InputController">
+                  <form name="popData" action=""><input type="text" name="city" ng-model="city" placeholder="City"><br /><br /><input type="text" name="state" ng-model="state" placeholder="State"><br /><br /><input type="text" name="tags" ng-model="tags" placeholder="Tags"></form><br /><a ng-click="updateData()" class="btn btn-small btn-primary">Get Your List</a><br /><br />
+                </div>
+                </div>
+              </div>
+            <div class="col-lg-8">
+                  <!-- begin copy paste -->
+
+                  <!-- Angular -->
+                  <a name="ng"></a>
+                  <div id="todos" class="container" style="margin-top: 100px">
+                  <div style="margin-left: 30px; margin-top: -72px">
+                    <div ng-controller="TodoController">
+                  <div><div data-force="5" class="layer title"><marquee width=700>{{message()}}</marquee></div></div>
+
+                  <div style="width: 30%; margin-top: 0px; margin-left: 10px; float: left;" class="block__list block__list_words">
+                  <span style="padding-left: 20px"><i>{{remaining()}} of {{todos.length}} <b>items to pack</b></i></span>
+                  [<a href="" ng-click="archive()">delete</a>]
+                  <ul ng-sortable="{ group: 'todo', animation: 150 }" class="unstyled">
+                  <li ng-repeat="todo in todos">
+                  <input type="checkbox" ng-model="todo.done">
+                  <span class="done-{{todo.done}}">{{todo.text}}</span>
+                  </li>
+                  </ul>
+                  <form ng-submit="addTodo()" style="padding-left: 20px">
+                  <input type="text" ng-model="todoText" size="30"
+                  placeholder="Add new item...">
+                  </form>
+                  </div>
+                  </div>
+
+
+                  <div style="width: 30%; margin-top: 0px; margin-left: 20px; float: left;" class="block__list block__list_words">
+                  <div ng-controller="TodoControllerNext">
+                  <!--<span style="padding-left: 20px">{{remaining()}} of {{todos.length}} remaining</span>-->
+                  <span style="padding-left: 20px"><i><b>Items to consider</b></i></span>
+                  <ul ng-sortable="sortableConfig" class="unstyled">
+                  <li ng-repeat="todo in todos">
+                  <input type="checkbox" ng-model="todo.done">
+                  <span class="done-{{todo.done}}">{{todo.text}}</span>
+                  </li>
+                  </ul>
+                  </div>
+                  </div>
+
+                  <div style="clear: both"></div>
+                  </div>
+                  </div>
+                  <!-- end copy paste -->
+            </div>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section class="success" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3>Add items to your list!</h3>
                     <hr class="star-light">
                 </div>
             </div>
-            <!-- Angular -->
-    <a name="ng"></a>
-
-
-    <div id="todos" ng-app="todoApp" class="container" style="margin-top: 100px">
-    <div style="margin-left: 30px">
-
-        <div style="width: 30%; margin-top: -8px; margin-left: 10px; float: left;" class="block__list block__list_words">
-        <div ng-controller="TodoController">
-            <span style="padding-left: 20px">{{remaining()}} of {{todos.length}} remaining</span>
-            [ <a href="" ng-click="archive()">archive</a> ]
-            <ul ng-sortable="{ group: 'todo', animation: 150 }" class="unstyled">
-            <li ng-repeat="todo in todos">
-                <input type="checkbox" ng-model="todo.done">
-                <span class="done-{{todo.done}}">{{todo.text}}</span>
-            </li>
-            </ul>
-            <form ng-submit="addTodo()" style="padding-left: 20px">
-            <input type="text" ng-model="todoText" size="30"
-               placeholder="Add new item...">
-            </form>
-        </div>
-        </div>
-
-
-        <div style="width: 30%; margin-top: -8px; margin-left: 10px; float: left;" class="block__list block__list_words">
-        <div ng-controller="TodoControllerNext">
-         <span style="padding-left: 20px">{{remaining()}} of {{todos.length}} remaining</span>
-         <ul ng-sortable="sortableConfig" class="unstyled">
-             <li ng-repeat="todo in todos">
-             <input type="checkbox" ng-model="todo.done">
-                <span class="done-{{todo.done}}">{{todo.text}}</span>
-            </li>
-        </ul>
+            <div class="footer-col col-md-12 text-center">
+                        <h4>Check out the source code!</h4>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://github.com/timothysu/hackdfw" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
         </div>
     </div>
 
@@ -142,7 +174,6 @@
             </div>
         </div>
     </footer>
-
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

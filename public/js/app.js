@@ -45,14 +45,40 @@
 		};
 	}
 
-
 	// Angular example
 	angular.module('todoApp', ['ng-sortable'])
-		.controller('TodoController', ['$scope', function ($scope) {
+		.controller('TodoController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+
+			$scope.anymessage='';
 			$scope.todos = [
-				{text: 'learn angular', done: true},
-				{text: 'build an angular app', done: false}
+				{text: 'Follow our instructions!', done: false},
+				{text: 'Drag and drop as you wish.  Try it!', done: false},
+				{text: 'Enjoy!', done: false}
 			];
+
+			$rootScope.$on('newtodos', function(event, obje) {
+				$scope.todos = [];
+				for (var index = 0; index < obje.length; ++index) {
+					$scope.todos.push({"text":obje[index],"done": false});
+				}
+				console.log($scope.todos);
+				//console.log(obje);
+				$scope.$apply();
+			});
+
+			$rootScope.$on('newmessage', function(event, obje) {
+				$scope.anymessage = '';
+				if(typeof obje == 'string' || obje instanceof String) {
+					$scope.anymessage = obje;
+			  }
+				else {
+					for (var index = 0; index < obje.length; ++index) {
+    				$scope.anymessage = $scope.anymessage + obje[index] + "\n";
+					}
+				}
+				//console.log(obje);
+				$scope.$apply();
+			});
 
 			$scope.addTodo = function () {
 				$scope.todos.push({text: $scope.todoText, done: false});
@@ -67,6 +93,10 @@
 				return count;
 			};
 
+			$scope.message = function() {
+				return $scope.anymessage;
+			};
+
 			$scope.archive = function () {
 				var oldTodos = $scope.todos;
 				$scope.todos = [];
@@ -75,12 +105,23 @@
 				});
 			};
 		}])
-		.controller('TodoControllerNext', ['$scope', function ($scope) {
+		.controller('TodoControllerNext', ['$scope', '$rootScope', function ($scope, $rootScope) {
 			$scope.todos = [
-				{text: 'learn Sortable', done: false},
-				{text: 'use ng-sortable', done: false},
-				{text: 'Enjoy', done: false}
+				{text: 'Bovine', done: true},
+				{text: 'These will be gone after we hear about your trip!', done: false}
 			];
+
+			$rootScope.$on('newalttodos', function(event, obje) {
+				$scope.todos = [];
+				//$scope.todos.push(angular.toJson({text:'Bovine', done:true}));
+				for (var index = 0; index < obje.length; ++index) {
+					$scope.todos.push({"text":obje[index],"done":false});
+				}
+				//$scope.todos.replace(/['"]+/g, '');
+				//console.log(obje);
+			  //console.log(angular.fromJson($scope.todos));
+				$scope.$apply();
+			});
 
 			$scope.remaining = function () {
 				var count = 0;
@@ -94,6 +135,27 @@
 			'Start End Add Update Remove Sort'.split(' ').forEach(function (name) {
 				$scope.sortableConfig['on' + name] = console.log.bind(console, name);
 			});
+		}]).controller('InputController',
+		['$scope', '$rootScope', function ($scope, $rootScope) {
+				$scope.updateData = function () {
+					console.log("Update clicked!");
+					var $http = angular.injector(['ng']).get('$http');
+					$http.post('http://gopackme.com/request',{city:$scope.city,state:$scope.state,tags:$scope.tags}).
+						success(function(data, status, headers, config){
+							$scope.anymessage = data['messages'];
+							$scope.newtodos = data['titems'];
+							$scope.alttodos = data['sitems'];
+							$rootScope.$emit('newmessage', $scope.anymessage);
+							$rootScope.$emit('newtodos', $scope.newtodos);
+							$rootScope.$emit('newalttodos', $scope.alttodos);
+						  console.log(data);
+							console.log('Emitted!');
+							//angular.element(document.getElementById('TodoController')).scope().setTitems(newtodos);
+							//angular.element(document.getElementById('TodoController')).scope().updateMessage(anymessage[0]);
+							//angular.element(document.getElementById('TodoControllerNext')).scope().setSitems(alttodos);
+						}).error(function(data, status, headers, config){console.log("Error!")});
+
+				};
 		}]);
 })();
 
