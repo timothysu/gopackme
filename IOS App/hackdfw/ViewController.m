@@ -122,13 +122,25 @@
         
         id fuckBitchesGetMoney = [feed objectForKey:@"titems"];
         id soManyBitches = [feed objectForKey:@"sitems"];
-        
+        id manyManyBitches = [feed objectForKey:@"messages"];
+
         [app.retrievedItems addObjectsFromArray:fuckBitchesGetMoney];
         [app.suggestedItemArray addObjectsFromArray:soManyBitches];
         
+        
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Weather"
+                                  message:manyManyBitches
+                                  delegate:nil
+                                  cancelButtonTitle:@"Ok"
+                                  otherButtonTitles:nil];
+        
+        [alertView show];
+        
         NSLog(@"%@ asianChicks", fuckBitchesGetMoney);
         NSLog(@"%@ asianChicks", soManyBitches);
-
+        NSLog(@"%@ asianChicks", manyManyBitches);
+        
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
