@@ -63,24 +63,49 @@
                     <hr class="star-light">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6 text-center">
-                    <img src="img/newexample.png" alt = "example" width = "80%" height = "80%">
-                </div>
-                <div class="col-lg-5" id="steps">
-                  shit goes here
-                </div>
-            <div class="footer-col col-md-12 text-center">
-            <br><br><br>
-                        <h4>Check out the source code!</h4>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="https://github.com/timothysu/hackdfw" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-            </div>
+            <!-- Angular -->
+    <a name="ng"></a>
+
+
+    <div id="todos" ng-app="todoApp" class="container" style="margin-top: 100px">
+    <div style="margin-left: 30px">
+
+        <div style="width: 30%; margin-top: -8px; margin-left: 10px; float: left;" class="block__list block__list_words">
+        <div ng-controller="TodoController">
+            <span style="padding-left: 20px">{{remaining()}} of {{todos.length}} remaining</span>
+            [ <a href="" ng-click="archive()">archive</a> ]
+            <ul ng-sortable="{ group: 'todo', animation: 150 }" class="unstyled">
+            <li ng-repeat="todo in todos">
+                <input type="checkbox" ng-model="todo.done">
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+            </ul>
+            <form ng-submit="addTodo()" style="padding-left: 20px">
+            <input type="text" ng-model="todoText" size="30"
+               placeholder="Add new item...">
+            </form>
         </div>
+        </div>
+
+
+        <div style="width: 30%; margin-top: -8px; margin-left: 10px; float: left;" class="block__list block__list_words">
+        <div ng-controller="TodoControllerNext">
+         <span style="padding-left: 20px">{{remaining()}} of {{todos.length}} remaining</span>
+         <ul ng-sortable="sortableConfig" class="unstyled">
+             <li ng-repeat="todo in todos">
+             <input type="checkbox" ng-model="todo.done">
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+        </ul>
+        </div>
+    </div>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+
+
+    </div>
     </section>
 
     <!-- Footer -->
@@ -117,51 +142,6 @@
             </div>
         </div>
     </footer>
-
-
-                      <!-- begin copy paste -->
-
-<!-- Angular -->
-<a name="ng"></a>
-<div id="todos" ng-app="todoApp" class="container" style="margin-top: 100px">
-  <div style="margin-left: 30px">
-    <div><div data-force="5" class="layer title title_xl">HackDFW Crowdsourced Packing</div></div>
-
-    <div style="width: 30%; margin-top: -8px; margin-left: 10px; float: left;" class="block__list block__list_words">
-      <div ng-controller="TodoController">
-        <span style="padding-left: 20px">{{remaining()}} of {{todos.length}} remaining</span>
-        [ <a href="" ng-click="archive()">archive</a> ]
-        <ul ng-sortable="{ group: 'todo', animation: 150 }" class="unstyled">
-          <li ng-repeat="todo in todos">
-            <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
-          </li>
-        </ul>
-        <form ng-submit="addTodo()" style="padding-left: 20px">
-          <input type="text" ng-model="todoText" size="30"
-               placeholder="Add new item...">
-        </form>
-      </div>
-    </div>
-
-
-    <div style="width: 30%; margin-top: -8px; margin-left: 10px; float: left;" class="block__list block__list_words">
-      <div ng-controller="TodoControllerNext">
-        <span style="padding-left: 20px">{{remaining()}} of {{todos.length}} remaining</span>
-        <ul ng-sortable="sortableConfig" class="unstyled">
-          <li ng-repeat="todo in todos">
-            <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div style="clear: both"></div>
-  </div>
-</div>
-                      <!-- end copy paste -->
-
 
 
     <!-- jQuery -->
