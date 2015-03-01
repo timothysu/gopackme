@@ -21,7 +21,7 @@ router.post('/', function(req, res) {
     if(stdout) console.log(stdout);
     res.setHeader('Connection', 'close');
     res.contentType('application/json');
-    res.send(JSON.parse(stdout));
+    res.send(JSON.stringify(JSON.parse(stdout)));
   });
 
   //res.contentType('application/json');
