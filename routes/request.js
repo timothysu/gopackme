@@ -11,7 +11,7 @@ router.post('/', function(req, res) {
   //jsonBuilder.push({cityFrom: req.body.cityFrom, cityTo: req.body.cityTo, startDate: req.body.startDate, endDate: req.body.endDate});
 
   var exec = require('child_process').exec;
-  var command = 'java -cp DFW.jar Main "' + JSON.stringify(jsonObj) + '"';
+  var command = 'java -cp DFW.jar Main "' + JSON.stringify(jsonObj).replace(/\n$/, '').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'') + '"';
   console.log(command);
   exec(command, function (error, stdout, stderr) {
     //if(error) console.log(error);
