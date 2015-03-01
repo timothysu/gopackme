@@ -1,18 +1,18 @@
 //
-//  topItemsTVC.m
+//  suggestedItemsTVC.m
 //  hackdfw
 //
-//  Created by Jacob Banks on 2/28/15.
+//  Created by Jacob Banks on 3/1/15.
 //  Copyright (c) 2015 Jacobanks development. All rights reserved.
 //
 
-#import "topItemsTVC.h"
+#import "suggestedItemsTVC.h"
 
-@interface topItemsTVC ()
+@interface suggestedItemsTVC ()
 
 @end
 
-@implementation topItemsTVC
+@implementation suggestedItemsTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,7 +22,18 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    //change the nav bar color
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    //change the background color
+    self.navigationController.navigationBar.translucent = NO;
     
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,33 +43,41 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     
+    //Set nav bar color
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    //change the nav bar colour
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    //change the background colour
+    self.navigationController.navigationBar.translucent = NO;
+    
     [self.tableView reloadData];
 }
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-//    dataModel *data = [[dataModel alloc] init];
-
-//   NSLog(@"%lu", (unsigned long)data.topitems.count);
+    AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
-    return 1;
+    NSLog(@"%@", app.suggestedItemArray);
+    
+    return app.suggestedItemArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
+    AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
     // Configure the cell...
     [[dataManager sharedManager] retrieveDataWithCompletion:^(dataModel *data, NSError *error) {
-//       cell.textLabel.text = [data.topitems objectAtIndex:indexPath.row];
-        cell.textLabel.text = [NSString stringWithFormat:@"%@", data.city];
+        cell.textLabel.text = [app.suggestedItemArray objectAtIndex:indexPath.row];
     }];
     
     return cell;
@@ -68,14 +87,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
-
-    if (cell.accessoryType == UITableViewCellAccessoryNone) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
         [app.retrievedItems addObject:cell.textLabel.text];
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        [app.retrievedItems removeObject:cell.textLabel.text];
-    }
+        [app.suggestedItemArray removeObject:cell.textLabel.text];
+    
+    
+    
+    [self.tableView reloadData];
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
 }

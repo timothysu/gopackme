@@ -27,9 +27,29 @@ static NSUInteger const kMCNumItems = 7;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    //change the nav bar color
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    //change the background color
+    self.navigationController.navigationBar.translucent = NO;
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    
+    //Set nav bar color
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    //change the nav bar colour
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    //change the background colour
+    self.navigationController.navigationBar.translucent = NO;
+
     [self.tableView reloadData];
 }
 
@@ -85,7 +105,7 @@ static NSUInteger const kMCNumItems = 7;
     
         UIView *checkView = [self viewWithImageName:@"check"];
         UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
-        
+
         UIView *crossView = [self viewWithImageName:@"cross"];
         UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
         
@@ -101,11 +121,12 @@ static NSUInteger const kMCNumItems = 7;
     
         cell.firstTrigger = 0.1;
         cell.secondTrigger = 0.5;
-        
+
+
         [cell setSwipeGestureWithView:checkView color:greenColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
             NSLog(@"Did swipe \"Checkmark\" cell");
             cell.itemLabel.textColor = greenColor;
-
+            
         }];
         
         
@@ -150,11 +171,16 @@ static NSUInteger const kMCNumItems = 7;
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
 
     [app.retrievedItems removeObject:cell.itemLabel.text];
-
+    [app.suggestedItemArray addObject:cell.itemLabel.text];
+    
     [self.tableView reloadData];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
 
+}
 
 /*
 // Override to support conditional editing of the table view.

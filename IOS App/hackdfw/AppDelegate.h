@@ -13,6 +13,8 @@
 }
 @property (nonatomic, retain) NSMutableArray *tagsMutableArray;
 @property (strong, nonatomic) NSMutableArray *retrievedItems;
+@property (strong, nonatomic) NSMutableArray *tagArray;
+@property (strong, nonatomic) NSMutableArray *suggestedItemArray;
 
 @property (strong, nonatomic) UIWindow *window;
 

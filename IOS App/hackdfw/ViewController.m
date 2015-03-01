@@ -48,6 +48,12 @@
     CALayer * layer = [_submitButton layer];
     [layer setMasksToBounds:YES];
     [layer setCornerRadius:5.0];
+    
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)addTag:(id)sender {
@@ -97,19 +103,32 @@
 
 - (void)submit:(id)sender {
     
-    NSString *startDateString = _startDate.text;
-    NSString *endDateString = _endDate.text;
-    NSString *destinationString = _destination.text;
-    
+//    NSString *startDateString = _startDate.text;
+//    NSString *endDateString = _endDate.text;
+    NSString *cityString = _city.text;
+    NSString *stateString = _state.text;
+
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSDictionary *parameters;
     
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
-    parameters = @{@"startDate": startDateString, @"endDate": endDateString, @"destination": destinationString, @"tags": app.tagsMutableArray};
+    parameters = @{@"city": cityString, @"state": stateString, @"tags": app.tagsMutableArray};
     
-    [manager POST:@"http://postcatcher.in/catchers/54f23965db21ee0300004bd7" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:@"http://mohawkvm.cloudapp.net/request" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                
+        NSDictionary *feed = responseObject;
+        
+        id fuckBitchesGetMoney = [feed objectForKey:@"titems"];
+        id soManyBitches = [feed objectForKey:@"sitems"];
+        
+        [app.retrievedItems addObjectsFromArray:fuckBitchesGetMoney];
+        [app.suggestedItemArray addObjectsFromArray:soManyBitches];
+        
+        NSLog(@"%@ asianChicks", fuckBitchesGetMoney);
+        NSLog(@"%@ asianChicks", soManyBitches);
+
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -121,7 +140,8 @@
     
     [_startDate resignFirstResponder];
     [_endDate resignFirstResponder];
-    [_destination resignFirstResponder];
+    [_city resignFirstResponder];
+    [_state resignFirstResponder];
     [_tagsTextField resignFirstResponder];
 
 }
