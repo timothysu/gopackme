@@ -14,8 +14,8 @@ router.post('/', function(req, res) {
   var command = 'java -cp DFW.jar Main "' + JSON.stringify(jsonObj) + '"';
   console.log(command);
   exec(command, function (error, stdout, stderr) {
-    if(error) console.log(error);
-    if(stderr) console.log(stderr);
+    //if(error) console.log(error);
+    //if(stderr) console.log(stderr);
     if(stdout) console.log(stdout);
     res.contentType('application/json');
     res.send(stdout);
