@@ -36,24 +36,24 @@
     }];
 }
 
-- (void)postDataWithCompletion:(ResultBlock)completionBlock
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    NSDictionary *parameters;
-    
-    ViewController *controller = [[ViewController alloc] init];
-    
-    controller.dataDictionary = @{@"startDate": @"test", @"endDate": @"test"};
-
-    parameters = controller.dataDictionary;
-    
-    [manager POST:@"http://postcatcher.in/catchers/54f23965db21ee0300004bd7" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
+//- (void)postDataWithCompletion:(ResultBlock)completionBlock
+//{
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    
+//    NSDictionary *parameters;
+//    
+//    ViewController *controller = [[ViewController alloc] init];
+//    
+//    controller.dataDictionary = @{@"startDate": @"test", @"endDate": @"test"};
+//
+//    parameters = controller.dataDictionary;
+//    
+//    [manager POST:@"http://mohawkvm.cloudapp.net/request" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"JSON: %@", responseObject);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Error: %@", error);
+//    }];
+//}
 
 
 #pragma mark - Initialization

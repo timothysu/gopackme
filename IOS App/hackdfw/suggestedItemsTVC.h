@@ -1,8 +1,8 @@
 //
-//  topItemsTVC.h
+//  suggestedItemsTVC.h
 //  hackdfw
 //
-//  Created by Jacob Banks on 2/28/15.
+//  Created by Jacob Banks on 3/1/15.
 //  Copyright (c) 2015 Jacobanks development. All rights reserved.
 //
 
@@ -13,6 +13,6 @@
 #import <AFNetworking/AFNetworking.h>
 #import "AppDelegate.h"
 
-@interface topItemsTVC : UITableViewController
+@interface suggestedItemsTVC : UITableViewController
 
 @end

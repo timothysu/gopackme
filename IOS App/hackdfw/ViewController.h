@@ -24,7 +24,8 @@
 
 @property (nonatomic, strong) IBOutlet UITextField *startDate;
 @property (nonatomic, strong) IBOutlet UITextField *endDate;
-@property (nonatomic, strong) IBOutlet UITextField *destination;
+@property (nonatomic, strong) IBOutlet UITextField *city;
+@property (nonatomic, strong) IBOutlet UITextField *state;
 @property (nonatomic, strong) IBOutlet UITextField *tagsTextField;
 @property (nonatomic, strong) IBOutlet UIButton *submitButton;
 

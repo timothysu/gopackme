@@ -17,13 +17,15 @@
 		1666D26E1AA24F020022FB32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1666D26D1AA24F020022FB32 /* Images.xcassets */; };
 		1666D2711AA24F020022FB32 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1666D26F1AA24F020022FB32 /* LaunchScreen.xib */; };
 		1666D27D1AA24F030022FB32 /* hackdfwTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1666D27C1AA24F030022FB32 /* hackdfwTests.m */; };
-		1669FB5A1AA2A91300D8EEF3 /* topItemsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1669FB591AA2A91300D8EEF3 /* topItemsTVC.m */; };
 		1669FB5D1AA2C0D800D8EEF3 /* packingListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1669FB5C1AA2C0D800D8EEF3 /* packingListTVC.m */; };
 		1669FB611AA2C95A00D8EEF3 /* MCSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1669FB601AA2C95A00D8EEF3 /* MCSwipeTableViewCell.m */; };
 		1669FB691AA2CCB700D8EEF3 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 1669FB651AA2CCB700D8EEF3 /* check.png */; };
 		1669FB6A1AA2CCB700D8EEF3 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1669FB661AA2CCB700D8EEF3 /* check@2x.png */; };
 		1669FB6B1AA2CCB700D8EEF3 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 1669FB671AA2CCB700D8EEF3 /* cross.png */; };
 		1669FB6C1AA2CCB700D8EEF3 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1669FB681AA2CCB700D8EEF3 /* cross@2x.png */; };
+		1669FB731AA2E44000D8EEF3 /* 117-todo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1669FB721AA2E44000D8EEF3 /* 117-todo.png */; };
+		1669FB751AA2E45C00D8EEF3 /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = 1669FB741AA2E45C00D8EEF3 /* 108-badge.png */; };
+		1669FB781AA310BC00D8EEF3 /* suggestedItemsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1669FB771AA310BC00D8EEF3 /* suggestedItemsTVC.m */; };
 		32F231726F367876C1CA15BC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1DB67C898511CF3BDB5E32 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -57,8 +59,6 @@
 		1666D2761AA24F030022FB32 /* hackdfwTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hackdfwTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1666D27B1AA24F030022FB32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1666D27C1AA24F030022FB32 /* hackdfwTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hackdfwTests.m; sourceTree = "<group>"; };
-		1669FB581AA2A91300D8EEF3 /* topItemsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = topItemsTVC.h; sourceTree = "<group>"; };
-		1669FB591AA2A91300D8EEF3 /* topItemsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = topItemsTVC.m; sourceTree = "<group>"; };
 		1669FB5B1AA2C0D800D8EEF3 /* packingListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = packingListTVC.h; sourceTree = "<group>"; };
 		1669FB5C1AA2C0D800D8EEF3 /* packingListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = packingListTVC.m; sourceTree = "<group>"; };
 		1669FB5F1AA2C95A00D8EEF3 /* MCSwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSwipeTableViewCell.h; sourceTree = "<group>"; };
@@ -67,6 +67,10 @@
 		1669FB661AA2CCB700D8EEF3 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		1669FB671AA2CCB700D8EEF3 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		1669FB681AA2CCB700D8EEF3 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+		1669FB721AA2E44000D8EEF3 /* 117-todo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "117-todo.png"; sourceTree = "<group>"; };
+		1669FB741AA2E45C00D8EEF3 /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "108-badge.png"; sourceTree = "<group>"; };
+		1669FB761AA310BC00D8EEF3 /* suggestedItemsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = suggestedItemsTVC.h; sourceTree = "<group>"; };
+		1669FB771AA310BC00D8EEF3 /* suggestedItemsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = suggestedItemsTVC.m; sourceTree = "<group>"; };
 		2A1DB67C898511CF3BDB5E32 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C78AD4DEC787F0516F2AD878 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DAA53239217414F17D6D4D2F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				1669FB671AA2CCB700D8EEF3 /* cross.png */,
 				1669FB681AA2CCB700D8EEF3 /* cross@2x.png */,
 				1666D2611AA24F020022FB32 /* Info.plist */,
+				1669FB741AA2E45C00D8EEF3 /* 108-badge.png */,
+				1669FB721AA2E44000D8EEF3 /* 117-todo.png */,
 				1666D2621AA24F020022FB32 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -175,8 +181,8 @@
 			children = (
 				1666D2671AA24F020022FB32 /* ViewController.h */,
 				1666D2681AA24F020022FB32 /* ViewController.m */,
-				1669FB581AA2A91300D8EEF3 /* topItemsTVC.h */,
-				1669FB591AA2A91300D8EEF3 /* topItemsTVC.m */,
+				1669FB761AA310BC00D8EEF3 /* suggestedItemsTVC.h */,
+				1669FB771AA310BC00D8EEF3 /* suggestedItemsTVC.m */,
 				1669FB5B1AA2C0D800D8EEF3 /* packingListTVC.h */,
 				1669FB5C1AA2C0D800D8EEF3 /* packingListTVC.m */,
 			);
@@ -295,8 +301,10 @@
 				1669FB6B1AA2CCB700D8EEF3 /* cross.png in Resources */,
 				1669FB6A1AA2CCB700D8EEF3 /* check@2x.png in Resources */,
 				1666D26C1AA24F020022FB32 /* Main.storyboard in Resources */,
+				1669FB731AA2E44000D8EEF3 /* 117-todo.png in Resources */,
 				1666D2711AA24F020022FB32 /* LaunchScreen.xib in Resources */,
 				1669FB6C1AA2CCB700D8EEF3 /* cross@2x.png in Resources */,
+				1669FB751AA2E45C00D8EEF3 /* 108-badge.png in Resources */,
 				1669FB691AA2CCB700D8EEF3 /* check.png in Resources */,
 				1666D26E1AA24F020022FB32 /* Images.xcassets in Resources */,
 			);
@@ -354,7 +362,7 @@
 				1669FB5D1AA2C0D800D8EEF3 /* packingListTVC.m in Sources */,
 				1633A9B41AA259C600EC41B5 /* dataModel.m in Sources */,
 				1666D2661AA24F020022FB32 /* AppDelegate.m in Sources */,
-				1669FB5A1AA2A91300D8EEF3 /* topItemsTVC.m in Sources */,
+				1669FB781AA310BC00D8EEF3 /* suggestedItemsTVC.m in Sources */,
 				1633A9BB1AA25BEF00EC41B5 /* dataManager.m in Sources */,
 				1666D2631AA24F020022FB32 /* main.m in Sources */,
 				1633A9B71AA25AD500EC41B5 /* APIManager.m in Sources */,
