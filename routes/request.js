@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.post('/', function(req, res) {
-  var jsonObj = JSON.parse(req.body);
+  var jsonObj = req.body;
   //jsonBuilder.push({cityFrom: req.body.cityFrom, cityTo: req.body.cityTo, startDate: req.body.startDate, endDate: req.body.endDate});
 
   var exec = require('child_process').exec;
