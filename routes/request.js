@@ -5,10 +5,18 @@ var router = express.Router();
 router.post('/', function(req, res) {
   //console.log(req.body);
   var jsonObj = req.body;
+
   if(jsonObj['tags[]']) {
     jsonObj['tags'] = jsonObj['tags[]'];
     delete jsonObj['tags[]'];
   }
+
+  if(typeof jsonObj['tags'] == 'string' || jsonObj['tags'] instanceof String) {
+    var arrayt = [];
+    arrayt[] = jsonObj['tags'];
+    jsonObj['tags'] = arrayt;
+  }
+
   //console.log(jsonObj['tags[]'][0]);
   //jsonBuilder.push({cityFrom: req.body.cityFrom, cityTo: req.body.cityTo, startDate: req.body.startDate, endDate: req.body.endDate});
 
