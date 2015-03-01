@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 //    [[dataManager sharedManager] retrieveDataWithCompletion:^(dataModel *info, NSError *error) {
-//        _cityLabel.text = [NSString stringWithFormat:@"%@", info.cityNames];
+//        NSLog(@"%@ hi", info.CityName);
 //    }];
     
     UIDatePicker *datePicker = [[UIDatePicker alloc]init];
@@ -48,6 +48,10 @@
     CALayer * layer = [_submitButton layer];
     [layer setMasksToBounds:YES];
     [layer setCornerRadius:5.0];
+
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(viewTapped:)];
+    tap.numberOfTapsRequired = 1;
+    [self.tagListView addGestureRecognizer:tap];
     
     [self setNeedsStatusBarAppearanceUpdate];
 }
@@ -73,6 +77,24 @@
     [self.tagsTextField setText:@""];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [self.tagListView addTag:_tagsTextField.text];
+    
+    AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    tagsString = _tagsTextField.text;
+    
+    tagsString = [tagsString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    [app.tagsMutableArray addObject:tagsString];
+    
+    NSLog(@"tags are: %@", tagsString);
+    
+    [self.tagsTextField setText:@""];
+
+    return YES;
+}
 
 - (void)dateTextField:(id)sender
 {
@@ -108,6 +130,8 @@
     NSString *cityString = _city.text;
     NSString *stateString = _state.text;
 
+    stateString = [[stateString stringByReplacingOccurrencesOfString:@" " withString:@""] uppercaseString];
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSDictionary *parameters;
@@ -126,20 +150,25 @@
 
         [app.retrievedItems addObjectsFromArray:fuckBitchesGetMoney];
         [app.suggestedItemArray addObjectsFromArray:soManyBitches];
-        
-        
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Weather"
-                                  message:manyManyBitches
-                                  delegate:nil
-                                  cancelButtonTitle:@"Ok"
-                                  otherButtonTitles:nil];
-        
-        [alertView show];
+        [app.messagesArray addObjectsFromArray:manyManyBitches];
         
         NSLog(@"%@ asianChicks", fuckBitchesGetMoney);
         NSLog(@"%@ asianChicks", soManyBitches);
-        NSLog(@"%@ asianChicks", manyManyBitches);
+        NSLog(@"%@ a couple asianChicks", manyManyBitches);
+        
+        NSString *string = [app.messagesArray componentsJoinedByString:@" "];
+        
+        
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:nil
+                                      message:string
+                                      delegate:nil
+                                      cancelButtonTitle:@"Ok"
+                                      otherButtonTitles:nil];
+            
+            [alertView show];
+        
+        NSLog(@"%@", string);
         
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -156,6 +185,14 @@
     [_state resignFirstResponder];
     [_tagsTextField resignFirstResponder];
 
+}
+
+-(void)viewTapped:(UITapGestureRecognizer *)recognizer {
+    [_startDate resignFirstResponder];
+    [_endDate resignFirstResponder];
+    [_city resignFirstResponder];
+    [_state resignFirstResponder];
+    [_tagsTextField resignFirstResponder];
 }
 
 @end

@@ -28,7 +28,7 @@ static NSUInteger const kMCNumItems = 7;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:239.0/255.0 green:137.0/255.0 blue:45.0/255.0 alpha:1];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     //change the nav bar color
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
@@ -38,7 +38,6 @@ static NSUInteger const kMCNumItems = 7;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -122,13 +121,20 @@ static NSUInteger const kMCNumItems = 7;
         cell.firstTrigger = 0.1;
         cell.secondTrigger = 0.5;
 
-
+    
+    if (cell.itemLabel.textColor == greenColor) {
+        [cell setSwipeGestureWithView:checkView color:[UIColor blueColor] mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+            NSLog(@"Did swipe \"Checkmark\" cell");
+            cell.itemLabel.textColor = [UIColor blackColor];
+            
+        }];
+    } else {
         [cell setSwipeGestureWithView:checkView color:greenColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
             NSLog(@"Did swipe \"Checkmark\" cell");
             cell.itemLabel.textColor = greenColor;
             
         }];
-        
+    }
         
         [cell setSwipeGestureWithView:crossView color:redColor mode:MCSwipeTableViewCellModeExit state:MCSwipeTableViewCellState3 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
             NSLog(@"Did swipe \"Cross\" cell");
@@ -142,7 +148,7 @@ static NSUInteger const kMCNumItems = 7;
 
 // When the user starts swiping the cell this method is called
 - (void)swipeTableViewCellDidStartSwiping:(MCSwipeTableViewCell *)cell {
-    // NSLog(@"Did start swiping the cell!");
+//     NSLog(@"Did start swiping the cell!");
 }
 
 // When the user ends swiping the cell this method is called

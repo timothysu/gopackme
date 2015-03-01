@@ -34,7 +34,7 @@
     static dispatch_once_t pred;
     static APIManager *_sharedManager = nil;
     
-    dispatch_once(&pred, ^{ _sharedManager = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://azrotech.com"]]; });
+    dispatch_once(&pred, ^{ _sharedManager = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.sabre.com/"]]; });
     return _sharedManager;
 }
 

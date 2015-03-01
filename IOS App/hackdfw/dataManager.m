@@ -21,7 +21,7 @@
 
 - (void)retrieveDataWithCompletion:(ResultBlock)completionBlock
 {
-    [_api GET:@"/weather-example.php" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [_api GET:@"v1/lists/supported/shop/flights/origins-destinations?destinationcountry=AR%20HTTP/1.1" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *responseDict = responseObject;
         
         dataModel *data = [[dataModel alloc] initWithDictionary:responseDict error:nil];
@@ -40,15 +40,7 @@
 //{
 //    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 //    
-//    NSDictionary *parameters;
-//    
-//    ViewController *controller = [[ViewController alloc] init];
-//    
-//    controller.dataDictionary = @{@"startDate": @"test", @"endDate": @"test"};
-//
-//    parameters = controller.dataDictionary;
-//    
-//    [manager POST:@"http://mohawkvm.cloudapp.net/request" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//    [manager POST:@"https://api.sabre.com/v1/auth/327p7pytsk7hxv2f" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        NSLog(@"JSON: %@", responseObject);
 //    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 //        NSLog(@"Error: %@", error);

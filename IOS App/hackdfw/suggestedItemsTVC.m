@@ -23,7 +23,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:239.0/255.0 green:137.0/255.0 blue:45.0/255.0 alpha:1];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     //change the nav bar color
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
@@ -76,9 +76,8 @@
     AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     // Configure the cell...
-    [[dataManager sharedManager] retrieveDataWithCompletion:^(dataModel *data, NSError *error) {
-        cell.textLabel.text = [app.suggestedItemArray objectAtIndex:indexPath.row];
-    }];
+    cell.textLabel.text = [app.suggestedItemArray objectAtIndex:indexPath.row];
+    
     
     return cell;
 }

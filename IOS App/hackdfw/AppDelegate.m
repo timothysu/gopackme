@@ -17,6 +17,7 @@
 @synthesize retrievedItems;
 @synthesize tagArray;
 @synthesize suggestedItemArray;
+@synthesize messagesArray;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -24,6 +25,7 @@
     retrievedItems = [[NSMutableArray alloc] init];
     tagArray = [[NSMutableArray alloc] init];
     suggestedItemArray = [[NSMutableArray alloc] init];
+    messagesArray = [[NSMutableArray alloc] init];
 
     return YES;
 }
@@ -44,7 +46,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor colorWithRed:0.0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1];
+    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor colorWithRed:239.0/255.0 green:137.0/255.0 blue:45.0/255.0 alpha:1];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -10,6 +10,6 @@
 
 @interface dataModel : JSONModel
 
-@property (nonatomic, strong) NSArray *topitems;
+@property (nonatomic, strong) NSString *CityName;
 
 @end

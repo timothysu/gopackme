@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSMutableArray *retrievedItems;
 @property (strong, nonatomic) NSMutableArray *tagArray;
 @property (strong, nonatomic) NSMutableArray *suggestedItemArray;
+@property (strong, nonatomic) NSMutableArray *messagesArray;
 
 @property (strong, nonatomic) UIWindow *window;
 
