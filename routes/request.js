@@ -5,8 +5,9 @@ var router = express.Router();
 router.post('/', function(req, res) {
   //console.log(req.body);
   var jsonObj = req.body;
-  jsonObj['tags'] = jsonObj['tags[]'];
-  delete jsonObj['tags[]'];
+    jsonObj['tags'] = jsonObj['tags[]'];
+    //delete jsonObj['tags[]'];
+    //if()
   //console.log(jsonObj['tags[]'][0]);
   //jsonBuilder.push({cityFrom: req.body.cityFrom, cityTo: req.body.cityTo, startDate: req.body.startDate, endDate: req.body.endDate});
 
@@ -19,7 +20,7 @@ router.post('/', function(req, res) {
     if(stdout) console.log(stdout);
     res.setHeader('Connection', 'close');
     res.contentType('application/json');
-    res.send(stdout);
+    res.send(JSON.stringify(stdout));
   });
 
   //res.contentType('application/json');
