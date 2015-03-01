@@ -77,7 +77,7 @@
 		}])
 		.controller('TodoControllerNext', ['$scope', function ($scope) {
 			$scope.todos = [
-				{text: 'learn Sortable', done: true},
+				{text: 'learn Sortable', done: false},
 				{text: 'use ng-sortable', done: false},
 				{text: 'Enjoy', done: false}
 			];
