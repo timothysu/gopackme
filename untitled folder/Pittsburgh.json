@@ -1,0 +1,396 @@
+
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "forecast": 1
+  }
+	}
+		,
+	"forecast":{
+		"txt_forecast": {
+		"date":"5:41 PM EST",
+		"forecastday": [
+		{
+		"period":0,
+		"icon":"snow",
+		"icon_url":"http://icons.wxug.com/i/c/k/snow.gif",
+		"title":"Saturday",
+		"fcttext":"Late night snow. Lows overnight in the upper teens.",
+		"fcttext_metric":"Snow developing overnight. Low -8C.",
+		"pop":"90"
+		}
+		,
+		{
+		"period":1,
+		"icon":"nt_snow",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_snow.gif",
+		"title":"Saturday Night",
+		"fcttext":"Cloudy with periods of snow after midnight. Low 18F. Winds light and variable. Chance of snow 90%. 1 to 3 inches of snow expected.",
+		"fcttext_metric":"Cloudy with snow developing after midnight. Low -8C. Winds light and variable. Chance of snow 90%. Snow accumulating 3-7cm.",
+		"pop":"90"
+		}
+		,
+		{
+		"period":2,
+		"icon":"snow",
+		"icon_url":"http://icons.wxug.com/i/c/k/snow.gif",
+		"title":"Sunday",
+		"fcttext":"Snow during the morning will mix with rain at times during the afternoon. High 39F. Winds SSW at 5 to 10 mph. Chance of precip 100%. 1 to 3 inches of snow expected.",
+		"fcttext_metric":"Snow during the morning will give way to a mixture of rain and snow during the afternoon. High 3C. Winds SSW at 10 to 15 km/h. Chance of precip 100%. Snow accumulating 3-7cm.",
+		"pop":"100"
+		}
+		,
+		{
+		"period":3,
+		"icon":"nt_snow",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_snow.gif",
+		"title":"Sunday Night",
+		"fcttext":"Rain and snow in the evening transitioning to snow showers late. Low 28F. Winds WSW at 10 to 15 mph. Chance of precip 90%. Snow accumulating 1 to 3 inches.",
+		"fcttext_metric":"Rain and snow in the evening transitioning to snow showers late. Low -3C. Winds WSW at 10 to 15 km/h. Chance of precip 90%. 3-7cm of snow expected.",
+		"pop":"90"
+		}
+		,
+		{
+		"period":4,
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/mostlycloudy.gif",
+		"title":"Monday",
+		"fcttext":"Mostly cloudy skies. High 32F. Winds WNW at 10 to 15 mph.",
+		"fcttext_metric":"Considerable cloudiness. High -1C. Winds WNW at 15 to 25 km/h.",
+		"pop":"20"
+		}
+		,
+		{
+		"period":5,
+		"icon":"nt_partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+		"title":"Monday Night",
+		"fcttext":"Partly cloudy skies. Low 16F. Winds ENE at 5 to 10 mph.",
+		"fcttext_metric":"Partly cloudy. Low -9C. Winds ENE at 10 to 15 km/h.",
+		"pop":"10"
+		}
+		,
+		{
+		"period":6,
+		"icon":"rain",
+		"icon_url":"http://icons.wxug.com/i/c/k/rain.gif",
+		"title":"Tuesday",
+		"fcttext":"Cloudy skies with periods of rain later in the day. Areas of freezing rain possible. High 42F. Winds SE at 10 to 15 mph. Chance of rain 100%. Rainfall around a quarter of an inch.",
+		"fcttext_metric":"Cloudy with rain developing later in the day. Areas of freezing rain possible. High around 5C. Winds SE at 15 to 25 km/h. Chance of rain 100%. Rainfall near 6mm.",
+		"pop":"100"
+		}
+		,
+		{
+		"period":7,
+		"icon":"nt_rain",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_rain.gif",
+		"title":"Tuesday Night",
+		"fcttext":"Rain. Low around 40F. Winds SW at 10 to 20 mph. Chance of rain 100%. Rainfall around a half an inch.",
+		"fcttext_metric":"Rain. Low 4C. Winds SW at 15 to 30 km/h. Chance of rain 100%. Rainfall near 12mm.",
+		"pop":"100"
+		}
+		]
+		},
+		"simpleforecast": {
+		"forecastday": [
+		{"date":{
+	"epoch":"1425168000",
+	"pretty":"7:00 PM EST on February 28, 2015",
+	"day":28,
+	"month":2,
+	"year":2015,
+	"yday":58,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"February",
+	"monthname_short":"Feb",
+	"weekday_short":"Sat",
+	"weekday":"Saturday",
+	"ampm":"PM",
+	"tz_short":"EST",
+	"tz_long":"America/New_York"
+},
+		"period":1,
+		"high": {
+		"fahrenheit":"28",
+		"celsius":"-2"
+		},
+		"low": {
+		"fahrenheit":"18",
+		"celsius":"-8"
+		},
+		"conditions":"Snow",
+		"icon":"snow",
+		"icon_url":"http://icons.wxug.com/i/c/k/snow.gif",
+		"skyicon":"",
+		"pop":90,
+		"qpf_allday": {
+		"in": 0.16,
+		"mm": 4
+		},
+		"qpf_day": {
+		"in": null,
+		"mm": null
+		},
+		"qpf_night": {
+		"in": 0.16,
+		"mm": 4
+		},
+		"snow_allday": {
+		"in": 1.7,
+		"cm": 4.3
+		},
+		"snow_day": {
+		"in": null,
+		"cm": null
+		},
+		"snow_night": {
+		"in": 1.7,
+		"cm": 4.3
+		},
+		"maxwind": {
+		"mph": 0,
+		"kph": 0,
+		"dir": "",
+		"degrees": 0
+		},
+		"avewind": {
+		"mph": 1,
+		"kph": 2,
+		"dir": "ESE",
+		"degrees": 119
+		},
+		"avehumidity": 63,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1425254400",
+	"pretty":"7:00 PM EST on March 01, 2015",
+	"day":1,
+	"month":3,
+	"year":2015,
+	"yday":59,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"March",
+	"monthname_short":"Mar",
+	"weekday_short":"Sun",
+	"weekday":"Sunday",
+	"ampm":"PM",
+	"tz_short":"EST",
+	"tz_long":"America/New_York"
+},
+		"period":2,
+		"high": {
+		"fahrenheit":"39",
+		"celsius":"4"
+		},
+		"low": {
+		"fahrenheit":"28",
+		"celsius":"-2"
+		},
+		"conditions":"Snow",
+		"icon":"snow",
+		"icon_url":"http://icons.wxug.com/i/c/k/snow.gif",
+		"skyicon":"",
+		"pop":100,
+		"qpf_allday": {
+		"in": 0.58,
+		"mm": 15
+		},
+		"qpf_day": {
+		"in": 0.36,
+		"mm": 9
+		},
+		"qpf_night": {
+		"in": 0.22,
+		"mm": 6
+		},
+		"snow_allday": {
+		"in": 2.9,
+		"cm": 7.4
+		},
+		"snow_day": {
+		"in": 1.7,
+		"cm": 4.3
+		},
+		"snow_night": {
+		"in": 1.2,
+		"cm": 3.0
+		},
+		"maxwind": {
+		"mph": 10,
+		"kph": 16,
+		"dir": "SSW",
+		"degrees": 196
+		},
+		"avewind": {
+		"mph": 7,
+		"kph": 11,
+		"dir": "SSW",
+		"degrees": 196
+		},
+		"avehumidity": 79,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1425340800",
+	"pretty":"7:00 PM EST on March 02, 2015",
+	"day":2,
+	"month":3,
+	"year":2015,
+	"yday":60,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"March",
+	"monthname_short":"Mar",
+	"weekday_short":"Mon",
+	"weekday":"Monday",
+	"ampm":"PM",
+	"tz_short":"EST",
+	"tz_long":"America/New_York"
+},
+		"period":3,
+		"high": {
+		"fahrenheit":"32",
+		"celsius":"0"
+		},
+		"low": {
+		"fahrenheit":"16",
+		"celsius":"-9"
+		},
+		"conditions":"Mostly Cloudy",
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/mostlycloudy.gif",
+		"skyicon":"",
+		"pop":20,
+		"qpf_allday": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 15,
+		"kph": 24,
+		"dir": "WNW",
+		"degrees": 284
+		},
+		"avewind": {
+		"mph": 12,
+		"kph": 19,
+		"dir": "WNW",
+		"degrees": 284
+		},
+		"avehumidity": 58,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1425427200",
+	"pretty":"7:00 PM EST on March 03, 2015",
+	"day":3,
+	"month":3,
+	"year":2015,
+	"yday":61,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"0",
+	"monthname":"March",
+	"monthname_short":"Mar",
+	"weekday_short":"Tue",
+	"weekday":"Tuesday",
+	"ampm":"PM",
+	"tz_short":"EST",
+	"tz_long":"America/New_York"
+},
+		"period":4,
+		"high": {
+		"fahrenheit":"42",
+		"celsius":"6"
+		},
+		"low": {
+		"fahrenheit":"40",
+		"celsius":"4"
+		},
+		"conditions":"Rain",
+		"icon":"rain",
+		"icon_url":"http://icons.wxug.com/i/c/k/rain.gif",
+		"skyicon":"",
+		"pop":100,
+		"qpf_allday": {
+		"in": 0.83,
+		"mm": 21
+		},
+		"qpf_day": {
+		"in": 0.26,
+		"mm": 7
+		},
+		"qpf_night": {
+		"in": 0.57,
+		"mm": 14
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 15,
+		"kph": 24,
+		"dir": "SE",
+		"degrees": 126
+		},
+		"avewind": {
+		"mph": 11,
+		"kph": 18,
+		"dir": "SE",
+		"degrees": 126
+		},
+		"avehumidity": 65,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		]
+		}
+	}
+}
