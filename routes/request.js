@@ -17,6 +17,7 @@ router.post('/', function(req, res) {
     //if(error) console.log(error);
     //if(stderr) console.log(stderr);
     if(stdout) console.log(stdout);
+    res.setHeader('Connection', 'close');
     res.contentType('application/json');
     res.send(stdout);
   });
