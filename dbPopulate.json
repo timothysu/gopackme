@@ -1,0 +1,65 @@
+{
+tag: "hackathon"
+item: ["laptop","phone charger","ethernet cable","suit","tie","briefcase","watch","pen","notepad","towel","binoculars","camera","phone","water bottle","sunglasses","cash","passport","voltage transformer","skis","goggles","toiletries","extra clothes","scarf","portable charger","headphones","USB stick","snacks","dress shoes","flip flops","swimsuit","sunscreen","laptop charger","basketball shoes","jersey","knee brace","shooting sleeve","mouthguard","pads","cleats","baby powder","jock","helmet","socks","gloves","business cards"],
+score: [100,100,70,8,14,9,55,68,73,62,2,42,100,69,59,65,9,6,0,8,96,51,47,68,93,85,64,38,41,2,4,100,0,2,5,0,0,0,1,3,0,1,88,38,41]
+}
+
+{
+tag: "business"
+item: ["laptop","phone charger","ethernet cable","suit","tie","briefcase","watch","pen","notepad","towel","binoculars","camera","phone","water bottle","sunglasses","cash","passport","voltage transformer","skis","goggles","toiletries","extra clothes","scarf","portable charger","headphones","USB stick","snacks","dress shoes","flip flops","swimsuit","sunscreen","laptop charger","basketball shoes","jersey","knee brace","shooting sleeve","mouthguard","pads","cleats","baby powder","jock","helmet","socks","gloves","business cards"],
+score: [90,98,45,92,95,79,87,91,64,22,0,29,98,45,76,59,28,18,0,2,53,83,41,58,83,71,31,93,4,8,3,90,9,4,3,0,0,0,0,7,0,0,92,49,83]
+}
+
+{
+tag: "sightseeing"
+item: ["laptop","phone charger","ethernet cable","suit","tie","briefcase","watch","pen","notepad","towel","binoculars","camera","phone","water bottle","sunglasses","cash","passport","voltage transformer","skis","goggles","toiletries","extra clothes","scarf","portable charger","headphones","USB stick","snacks","dress shoes","flip flops","swimsuit","sunscreen","laptop charger","basketball shoes","jersey","knee brace","shooting sleeve","mouthguard","pads","cleats","baby powder","jock","helmet","socks","gloves","business cards"],
+score: [41,95,1,3,5,2,48,61,39,42,89,83,95,90,83,73,22,4,0,11,87,89,37,31,88,14,68,4,22,19,79,52,4,14,11,0,5,0,14,28,0,27,98,73,3]
+}
+
+{
+tag: "gambling"
+item: ["laptop","phone charger","ethernet cable","suit","tie","briefcase","watch","pen","notepad","towel","binoculars","camera","phone","water bottle","sunglasses","cash","passport","voltage transformer","skis","goggles","toiletries","extra clothes","scarf","portable charger","headphones","USB stick","snacks","dress shoes","flip flops","swimsuit","sunscreen","laptop charger","basketball shoes","jersey","knee brace","shooting sleeve","mouthguard","pads","cleats","baby powder","jock","helmet","socks","gloves","business cards"],
+score: [73,96,11,76,75,63,81,73,44,7,1,31,96,28,89,98,21,22,0,2,31,90,40,29,79,13,71,81,33,19,9,73,3,2,2,0,0,0,1,5,0,3,84,39,28]
+}
+
+{
+tag: "international"
+item: ["laptop","phone charger","ethernet cable","suit","tie","briefcase","watch","pen","notepad","towel","binoculars","camera","phone","water bottle","sunglasses","cash","passport","voltage transformer","skis","goggles","toiletries","extra clothes","scarf","portable charger","headphones","USB stick","snacks","dress shoes","flip flops","swimsuit","sunscreen","laptop charger","basketball shoes","jersey","knee brace","shooting sleeve","mouthguard","pads","cleats","baby powder","jock","helmet","socks","gloves","business cards"],
+score: [94,98,41,14,32,14,66,62,38,58,54,88,98,87,88,94,100,69,22,33,93,99,54,73,89,39,39,34,71,63,56,94,9,7,5,0,1,0,6,11,0,9,96,61,31]
+}
+
+{
+tag: "skiing"
+item: ["laptop","phone charger","ethernet cable","suit","tie","briefcase","watch","pen","notepad","towel","binoculars","camera","phone","water bottle","sunglasses","cash","passport","voltage transformer","skis","goggles","toiletries","extra clothes","scarf","portable charger","headphones","USB stick","snacks","dress shoes","flip flops","swimsuit","sunscreen","laptop charger","basketball shoes","jersey","knee brace","shooting sleeve","mouthguard","pads","cleats","baby powder","jock","helmet","socks","gloves","business cards"],
+score: [31,93,5,3,4,2,31,10,8,59,7,41,93,73,43,81,10,8,100,97,67,95,94,12,71,3,79,7,12,9,2,31,0,0,8,0,3,0,0,1,0,89,100,100,8]
+}
+
+{
+tag: "wedding"
+item: ["laptop","phone charger","ethernet cable","suit","tie","briefcase","watch","pen","notepad","towel","binoculars","camera","phone","water bottle","sunglasses","cash","passport","voltage transformer","skis","goggles","toiletries","extra clothes","scarf","portable charger","headphones","USB stick","snacks","dress shoes","flip flops","swimsuit","sunscreen","laptop charger","basketball shoes","jersey","knee brace","shooting sleeve","mouthguard","pads","cleats","baby powder","jock","helmet","socks","gloves","business cards"],
+score: [68,97,8,81,87,4,58,31,11,6,5,79,97,21,64,66,5,4,0,4,93,74,63,41,54,6,22,82,14,7,21,68,1,2,3,0,0,0,1,8,0,2,93,37,11]
+}
+
+{
+tag: "shopping"
+item: ["laptop","phone charger","ethernet cable","suit","tie","briefcase","watch","pen","notepad","towel","binoculars","camera","phone","water bottle","sunglasses","cash","passport","voltage transformer","skis","goggles","toiletries","extra clothes","scarf","portable charger","headphones","USB stick","snacks","dress shoes","flip flops","swimsuit","sunscreen","laptop charger","basketball shoes","jersey","knee brace","shooting sleeve","mouthguard","pads","cleats","baby powder","jock","helmet","socks","gloves","business cards"],
+score: [7,98,0,15,17,9,59,61,39,8,4,19,98,41,83,94,7,5,0,2,79,55,58,17,43,2,46,39,78,2,19,7,2,4,2,0,0,0,1,3,0,1,63,31,2]
+}
+
+{
+tag: "beach"
+item: ["laptop","phone charger","ethernet cable","suit","tie","briefcase","watch","pen","notepad","towel","binoculars","camera","phone","water bottle","sunglasses","cash","passport","voltage transformer","skis","goggles","toiletries","extra clothes","scarf","portable charger","headphones","USB stick","snacks","dress shoes","flip flops","swimsuit","sunscreen","laptop charger","basketball shoes","jersey","knee brace","shooting sleeve","mouthguard","pads","cleats","baby powder","jock","helmet","socks","gloves","business cards"],
+score: [33,91,4,5,6,2,39,22,6,98,23,73,91,82,93,82,5,3,0,77,88,97,9,33,69,6,52,4,94,98,93,33,3,5,2,0,0,0,2,9,0,6,33,9,1]
+}
+
+{
+tag: "basketball"
+item: ["laptop","phone charger","ethernet cable","suit","tie","briefcase","watch","pen","notepad","towel","binoculars","camera","phone","water bottle","sunglasses","cash","passport","voltage transformer","skis","goggles","toiletries","extra clothes","scarf","portable charger","headphones","USB stick","snacks","dress shoes","flip flops","swimsuit","sunscreen","laptop charger","basketball shoes","jersey","knee brace","shooting sleeve","mouthguard","pads","cleats","baby powder","jock","helmet","socks","gloves","business cards"],
+score: [2,89,1,21,21,3,44,9,9,32,1,9,91,68,89,85,4,3,0,3,23,98,3,11,84,1,95,21,0,0,1,2,100,100,43,58,53,0,0,100,0,0,100,0,0]
+}
+
+{
+tag: "football"
+item: ["laptop","phone charger","ethernet cable","suit","tie","briefcase","watch","pen","notepad","towel","binoculars","camera","phone","water bottle","sunglasses","cash","passport","voltage transformer","skis","goggles","toiletries","extra clothes","scarf","portable charger","headphones","USB stick","snacks","dress shoes","flip flops","swimsuit","sunscreen","laptop charger","basketball shoes","jersey","knee brace","shooting sleeve","mouthguard","pads","cleats","baby powder","jock","helmet","socks","gloves","business cards"],
+score: [2,91,1,5,6,1,34,12,11,38,1,4,94,73,92,89,1,2,0,5,21,98,4,14,84,1,95,0,0,0,1,2,0,100,40,0,100,100,100,100,100,100,100,100,0]
+}
