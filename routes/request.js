@@ -11,11 +11,11 @@ router.post('/', function(req, res) {
     delete jsonObj['tags[]'];
   }
 
-  /*if(typeof jsonObj['tags'] == 'string' || jsonObj['tags'] instanceof String) {
+  if(typeof jsonObj['tags'] == 'string' || jsonObj['tags'] instanceof String) {
     var arrayt = [];
-    arrayt[] = jsonObj['tags'];
+    arrayt.push(jsonObj['tags']);
     jsonObj['tags'] = arrayt;
-  }*/
+  }
 
   //console.log(jsonObj['tags[]'][0]);
   //jsonBuilder.push({cityFrom: req.body.cityFrom, cityTo: req.body.cityTo, startDate: req.body.startDate, endDate: req.body.endDate});
