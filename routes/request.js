@@ -9,7 +9,7 @@ router.post('/', function(req, res) {
   //jsonBuilder.push({cityFrom: req.body.cityFrom, cityTo: req.body.cityTo, startDate: req.body.startDate, endDate: req.body.endDate});
 
   var exec = require('child_process').exec;
-  exec('java -cp DFW.jar Main "' + jsonObj['tags'][0] + '"', function (error, stdout, stderr) {
+  exec('java -cp DFW.jar Main "' + jsonObj['tags[]'][0] + '"', function (error, stdout, stderr) {
     if(error) console.log(error);
     if(stderr) console.log(stderr);
     res.contentType('application/json');
