@@ -62,37 +62,35 @@
 
 - (void)addTag:(id)sender {
     
-    [self.tagListView addTag:_tagsTextField.text];
+    if (![self.tagsTextField.text isEqualToString:@""] && ![self.tagsTextField.text isEqualToString:@" "]) {
+        [self.tagListView addTag:_tagsTextField.text];
     
-    AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        
+        tagsString = _tagsTextField.text;
+        tagsString = [tagsString stringByReplacingOccurrencesOfString:@" " withString:@""];
+        [app.tagsMutableArray addObject:tagsString];
+        NSLog(@"tags are: %@", tagsString);
     
-    tagsString = _tagsTextField.text;
-    
-    tagsString = [tagsString stringByReplacingOccurrencesOfString:@" " withString:@""];
-
-    [app.tagsMutableArray addObject:tagsString];
-    
-    NSLog(@"tags are: %@", tagsString);
-    
-    [self.tagsTextField setText:@""];
+        [self.tagsTextField setText:@""];
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    [self.tagListView addTag:_tagsTextField.text];
-    
-    AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    
-    tagsString = _tagsTextField.text;
-    
-    tagsString = [tagsString stringByReplacingOccurrencesOfString:@" " withString:@""];
-    
-    [app.tagsMutableArray addObject:tagsString];
-    
-    NSLog(@"tags are: %@", tagsString);
-    
-    [self.tagsTextField setText:@""];
+    if (![self.tagsTextField.text isEqualToString:@""] && ![self.tagsTextField.text isEqualToString:@" "]) {
 
+        [self.tagListView addTag:_tagsTextField.text];
+        
+        AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        
+        tagsString = _tagsTextField.text;
+        tagsString = [tagsString stringByReplacingOccurrencesOfString:@" " withString:@""];
+        [app.tagsMutableArray addObject:tagsString];
+        NSLog(@"tags are: %@", tagsString);
+    
+        [self.tagsTextField setText:@""];
+    }
     return YES;
 }
 
@@ -132,48 +130,8 @@
 
     stateString = [[stateString stringByReplacingOccurrencesOfString:@" " withString:@""] uppercaseString];
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [[dataManager sharedManager] postDataWithCity:cityString andState:stateString];
     
-    NSDictionary *parameters;
-    
-    AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    
-    parameters = @{@"city": cityString, @"state": stateString, @"tags": app.tagsMutableArray};
-    
-    [manager POST:@"http://mohawkvm.cloudapp.net/request" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                
-        NSDictionary *feed = responseObject;
-        
-        id fuckBitchesGetMoney = [feed objectForKey:@"titems"];
-        id soManyBitches = [feed objectForKey:@"sitems"];
-        id manyManyBitches = [feed objectForKey:@"messages"];
-
-        [app.retrievedItems addObjectsFromArray:fuckBitchesGetMoney];
-        [app.suggestedItemArray addObjectsFromArray:soManyBitches];
-        [app.messagesArray addObjectsFromArray:manyManyBitches];
-        
-        NSLog(@"%@ asianChicks", fuckBitchesGetMoney);
-        NSLog(@"%@ asianChicks", soManyBitches);
-        NSLog(@"%@ a couple asianChicks", manyManyBitches);
-        
-        NSString *string = [app.messagesArray componentsJoinedByString:@" "];
-        
-        
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                      initWithTitle:nil
-                                      message:string
-                                      delegate:nil
-                                      cancelButtonTitle:@"Ok"
-                                      otherButtonTitles:nil];
-            
-            [alertView show];
-        
-        NSLog(@"%@", string);
-        
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
 }
 
 

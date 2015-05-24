@@ -16,8 +16,8 @@ typedef void (^ResultBlock)(dataModel *info, NSError *error);
 
 #pragma mark - Remote
 
-- (void)retrieveDataWithCompletion:(ResultBlock)completionBlock;
-//- (void)postDataWithCompletion:(ResultBlock)completionBlock;
+//- (void)retrieveDataWithCompletion:(ResultBlock)completionBlock;
+- (void)postDataWithCity:(NSString *)cityString andState:(NSString *)stateString;
 
 #pragma mark - Singleton
 

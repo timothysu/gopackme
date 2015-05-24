@@ -19,21 +19,68 @@
 
 #pragma mark - Remote
 
-- (void)retrieveDataWithCompletion:(ResultBlock)completionBlock
-{
-    [_api GET:@"v1/lists/supported/shop/flights/origins-destinations?destinationcountry=AR%20HTTP/1.1" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *responseDict = responseObject;
+//- (void)retrieveDataWithCompletion:(ResultBlock)completionBlock
+//{
+//    [_api GET:@"v1/lists/supported/shop/flights/origins-destinations?destinationcountry=AR%20HTTP/1.1" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSDictionary *responseDict = responseObject;
+//        
+//        dataModel *data = [[dataModel alloc] initWithDictionary:responseDict error:nil];
+//        
+//        if(completionBlock)
+//            completionBlock(data, nil);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Failed to retrieve data: %@", error);
+//        
+//        if(completionBlock)
+//            completionBlock(nil, error);
+//    }];
+//}
+
+- (void)postDataWithCity:(NSString *)cityString andState:(NSString *)stateString {
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary *parameters;
+    
+    AppDelegate *app =  (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    parameters = @{@"city": cityString, @"state": stateString, @"tags": app.tagsMutableArray};
+    
+    [manager POST:@"http://mohawkvm.cloudapp.net/request" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        dataModel *data = [[dataModel alloc] initWithDictionary:responseDict error:nil];
+        NSDictionary *feed = responseObject;
         
-        if(completionBlock)
-            completionBlock(data, nil);
+        id fuckBitchesGetMoney = [feed objectForKey:@"titems"];
+        id soManyBitches = [feed objectForKey:@"sitems"];
+        id manyManyBitches = [feed objectForKey:@"messages"];
+        
+        [app.retrievedItems addObjectsFromArray:fuckBitchesGetMoney];
+        [app.suggestedItemArray addObjectsFromArray:soManyBitches];
+        [app.messagesArray addObjectsFromArray:manyManyBitches];
+        
+        NSLog(@"%@ asianChicks", fuckBitchesGetMoney);
+        NSLog(@"%@ asianChicks", soManyBitches);
+        NSLog(@"%@ a couple asianChicks", manyManyBitches);
+        
+        NSString *string = [app.messagesArray componentsJoinedByString:@" "];
+        
+        
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:nil
+                                  message:string
+                                  delegate:nil
+                                  cancelButtonTitle:@"Ok"
+                                  otherButtonTitles:nil];
+        
+        [alertView show];
+        
+        NSLog(@"%@", string);
+        
+        NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Failed to retrieve data: %@", error);
-        
-        if(completionBlock)
-            completionBlock(nil, error);
+        NSLog(@"Error: %@", error);
     }];
+
 }
 
 //- (void)postDataWithCompletion:(ResultBlock)completionBlock
