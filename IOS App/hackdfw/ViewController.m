@@ -23,18 +23,6 @@
 //    [[dataManager sharedManager] retrieveDataWithCompletion:^(dataModel *info, NSError *error) {
 //        NSLog(@"%@ hi", info.CityName);
 //    }];
-    
-    UIDatePicker *datePicker = [[UIDatePicker alloc]init];
-    [datePicker setDate:[NSDate date]];
-    datePicker.datePickerMode = UIDatePickerModeDate;
-    [datePicker addTarget:self action:@selector(dateTextField:) forControlEvents:UIControlEventValueChanged];
-    [_startDate setInputView:datePicker];
-
-    UIDatePicker *datePicker2 = [[UIDatePicker alloc]init];
-    [datePicker2 setDate:[NSDate date]];
-    datePicker2.datePickerMode = UIDatePickerModeDate;
-    [datePicker2 addTarget:self action:@selector(dateTextField2:) forControlEvents:UIControlEventValueChanged];
-    [_endDate setInputView:datePicker2];
 
     [self.tagsTextField setDelegate:self];
 
@@ -92,28 +80,6 @@
         [self.tagsTextField setText:@""];
     }
     return YES;
-}
-
-- (void)dateTextField:(id)sender
-{
-    UIDatePicker *picker = (UIDatePicker*)_startDate.inputView;
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    NSDate *eventDate = picker.date;
-    [dateFormat setDateFormat:@"MM/dd/yyyy"];
-    
-    NSString *dateString = [dateFormat stringFromDate:eventDate];
-    _startDate.text = [NSString stringWithFormat:@"%@", dateString];
-}
-
-- (void)dateTextField2:(id)sender
-{
-    UIDatePicker *picker = (UIDatePicker*)_endDate.inputView;
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    NSDate *eventDate = picker.date;
-    [dateFormat setDateFormat:@"MM/dd/yyyy"];
-    
-    NSString *dateString = [dateFormat stringFromDate:eventDate];
-    _endDate.text = [NSString stringWithFormat:@"%@", dateString];
 }
 
 - (void)didReceiveMemoryWarning {
